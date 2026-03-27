@@ -1,0 +1,58 @@
+<!-- // event Delegation -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <style>
+   #gp{
+    width: 600px;
+    height: 600px;
+    background-color: brown;
+   }
+   #parent{
+    width: 400px;
+    height: 400px;
+    background-color: red;
+   }
+   #child{
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+   }
+    </style>
+</head>
+<body>
+    <div id="gp">
+        gp
+        <div id="parent">
+            parent
+            <div id="child">
+                child
+            </div>
+        </div>
+    </div>
+    <script>
+let gp=document.querySelector("#gp");
+let parent=document.querySelector("#parent");
+let child=document.querySelector("#child");
+
+gp.addEventListener("click",()=>{
+    console.log("grand parent is clicked");
+    
+});
+parent.addEventListener("click",()=>{
+    console.log(" parent is clicked");
+    
+});
+child.addEventListener("click",()=>{
+    console.log("child is clicked");
+    
+});
+
+
+    </script>
+</body>
+</html>
