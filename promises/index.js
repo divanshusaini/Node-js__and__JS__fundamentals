@@ -21,7 +21,13 @@ fetch("https://api.github.com/users")
        return response.json();
 })
 .then((data)=>{
- console.log(data);
+ const root=document.getElementById("root");
+ for(let i=0;i<data.length;i++){
+    let user=document.createElement('img');
+    user.src=data[i].avatar_url;
+    user.style.height='150px';
+    root.append(user);
+ }
  
 });
 
