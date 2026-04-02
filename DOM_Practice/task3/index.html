@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task3</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+#body{
+    height: 1000px;
+    width: 1000px;
+    background-color: beige;
+    position: relative;
+}
+.circle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+    </style>
+</head>
+<body >
+<div id="body"></div>
+    <script>
+   const body=document.getElementById("body");
+   body.addEventListener("click",(e)=>{
+        const element=document.createElement('div');
+        element.classList.add("circle");
+        element.style.backgroundColor=`rgb(${Math.floor(Math.random()*256)},
+              ${Math.floor(Math.random()*256)},
+              ${Math.floor(Math.random()*256)})`;
+        
+
+    element.style.position = "absolute";
+    element.style.left = e.pageX-25 + "px";
+    element.style.top = e.pageY-25 + "px";
+           
+body.append(element);
+
+   });
+    </script>
+</body>
+</html>
