@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task2</title>
+    <style>
+  #container {
+        height: 500px;
+        width: 500px;
+        background-color: beige;
+        
+        
+      }
+
+      .square {
+        height: 30px;
+        width: 30px;
+        /* background-color: aqua; */
+        /* padding-top: 10px; */
+        margin: 15px;
+        display: inline-block;
+      }
+      .circle{
+         height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        /* background-color: aqua; */
+        /* padding-top: 10px; */
+        margin: 15px;
+        display: inline-block;
+      }
+      .rectangle{
+        height: 30px;
+        width: 50px;
+        /* background-color: aqua; */
+        /* padding-top: 10px; */
+        margin: 15px;
+        display: inline-block;
+      }
+
+    </style>
+</head>
+<body>
+    <input id="inpt" type="number" placeholder="No. of Images" />
+    <input type="color" id="ShapeColor" placeholder="Color of Shape">
+    <input type="text" id="ShapeName" placeholder="Name of shape">
+    <button type="submit" id="btn">Create</button>
+
+    <div id="container"></div>
+    <script >
+        const btn = document.querySelector("#btn");
+        btn.addEventListener("click",()=>{
+            const inputValue=document.querySelector("#inpt").value;
+            const container=document.querySelector("#container");
+            container.innerHTML="";
+            const color= document.querySelector("#ShapeColor").value;
+            const name=document.querySelector("#ShapeName").value;
+
+            for(let i=0;i<inputValue;i++){
+                let shape=document.createElement('div');
+                shape.style.backgroundColor=color;
+                shape.classList.add(name);
+                
+                container.append(shape);
+
+            }
+            
+             
+
+        });
+    </script>
+</body>
+</html>
